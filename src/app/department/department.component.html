@@ -1,0 +1,31 @@
+<h3>Add Department Detials</h3>
+<div>
+<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" >
+    <label>Name</label> : <input type="text" name = "departmentName" ngModel />
+    <label>Address</label> : <input type="text" name = "departmentAddress" ngModel />
+    <label>Code</label> : <input type="text" name = "departmentCode" ngModel />
+    <button type="submit" > Add</button>
+</form>
+</div>
+<br/>
+<br/>
+<div>
+    <table class='table'>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let department of departmentDetails;">
+            <td>{{department.departmentId}}</td>
+            <td>{{department.departmentName}}</td>
+            <td>{{department.departmentAddress}}</td>
+            <td>{{department.departmentCode}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>

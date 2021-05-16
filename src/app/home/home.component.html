@@ -1,0 +1,35 @@
+<h3>Add User Detials</h3>
+<div>
+<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
+<label>Search By User Id</label> : <input type="text" name="userId" ngModel/>
+<button type="submit">Search</button>
+</form>
+</div>
+ <div *ngIf="search">
+    <table class='table'>
+        <thead>
+          <tr>
+            <th>User ID</th>
+            <th>User First Name</th>
+            <th>User Last Name</th>
+            <th>User Email</th>
+            <th>Department ID</th>
+            <th>Department Name</th>
+            <th>Department Address</th>
+            <th>Department Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{search.user.userId}}</td>
+            <td>{{search.user.userFirstName}}</td>
+            <td>{{search.user.userLastName}}</td>
+            <td>{{search.user.userEmail}}</td>
+            <td>{{search.department.departmentId}}</td>
+            <td>{{search.department.departmentName}}</td>
+            <td>{{search.department.departmentAddress}}</td>
+            <td>{{search.department.departmentCode}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
